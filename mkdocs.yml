@@ -1,9 +1,8 @@
 site_name: Programowanie w języku Python
+docs_dir: docs
 repo_url: https://github.com/agh-geoinf/python-1-starter
 
 copyright: Copyright 2024 Jakub Staszel KGiIS AGH
-
-language: pl
 
 theme:
   name: material
@@ -44,3 +43,12 @@ nav:
     - Przypisania: zaj2/przypisania.md
     - Pętle: zaj2/petle.md
     - Funkcje cz. 1: zaj2/funkcje.md
+  - Zajęcia 3:
+      - Funkcje cz. 2: zaj3/funkcje_02.md
+      - Moduły: zaj3/moduly.md
+      - Konwencja nazewnictwa: zaj3/konwencja_nazewnictwa.md
+      - Zasięgi: zaj3/zasiegi.md
+      - Pakiety modułów: zaj3/pakiety.md
+      - Dokumentacja: zaj3/dokumentacja.md
+  - Zajęcia 4:
+      - Programowanie obiektowe: zaj4/obiektowe.md
