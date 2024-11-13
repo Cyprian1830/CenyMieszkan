@@ -1,7 +1,14 @@
-from .incident import Incident
+from src.zajecia04.operations.incident import Incident
+from datetime import time
+from src.zajecia04.fleet.ambulance import Ambulance
+
 
 class IncidentQueue:
+    __max_id = 0
+
     def __init__(self):
+        IncidentQueue.__max_id += 1
+        self.id = IncidentQueue.__max_id
         self.__queue = []
 
     def __getitem__(self, position):
@@ -78,40 +85,41 @@ class IncidentQueue:
 
 if __name__ == "__main__":
     queue = IncidentQueue()
-    incident1 = Incident(1, "Power outage in sector 4")
-    incident2 = Incident(2, "Fire alarm in building 21")
-    incident4 = Incident(4, "Fire alarm in building 129")
+#    incident1 = Incident("Power outage in sector 4", 1, time(20, 8, 12), dict(imie="Cyprian", naziwsko="Szot"))
+ #   incident2 = Incident("Fire alarm in building 21", 3, time(14, 9, 18), dict(imie="Troy", nazwisko="Sivan"))
+  #  incident4 = Incident("Fire alarm in building 129", 2, time(18, 10, 1), dict(imie="Kamil", nazwisko="Bednarek"))
 
     print(f"---------- wyświetlanie za pomocą __str__ ----------")
-    print(queue)
+  #  print(queue)
 
     print(f"---------- dodanie za pomocą __iadd__ ----------")
-    queue += incident1
-    queue += incident2
-    print(queue)
+  #  queue += incident1
+    #queue += incident2
+   # print(queue)
     print(f"---------- dodanie za pomocą __add__ ----------")
-    queue = queue + incident4
-    print(queue)
+ #   queue = queue + incident4
+    #print(queue)
 
     print(f"---------- dostęp za pomocą __getitem__ ----------")
-    print(queue[0])
+#    print(queue[0])
     print(f"---------- sprawdzenie za pomocą __contains__ ----------")
-    print(incident1 in queue)
+   # print(incident1 in queue)
 
     print(f"---------- iteracja za pomocą __iter__ i __next__ ----------")
-    for incident in queue:
-        print(incident)
+   # for incident in queue:
+  #      print(incident)
 
     print(f"---------- dodawanie prawostronne za pomocą __radd__ ----------")
-    new_incident = Incident(3, "Test incident")
-    queue = new_incident + queue
+#    new_incident = Incident("Test incident", 1, time(20, 50, 19),
+#                             dict(imie="Zofia", nazwisko="Mrowiec"), Ambulance("car", "invalid", "Gdansk", "none"))
+  # queue = new_incident + queue
 
     print(f"---------- test za pomocą __bool__ ----------")
-    if queue:
-        print("Queue is not empty.")
+ #   if queue:
+    print("Queue is not empty.")
 
     print(f"---------- długość kolejki za pomocą __len__ ----------")
-    print(len(queue))
+  #  print(len(queue))
 
     print(f"---------- wyszukiwanie za pomocą __call__ ----------")
-    print(queue(1))
+    #print(queue(1))

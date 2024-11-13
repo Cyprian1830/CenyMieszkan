@@ -1,5 +1,5 @@
 # V1 - slajd 8: python -m personnel.driver
-from .employee import Employee
+from src.zajecia04.personnel.employee import Employee
 
 class Driver(Employee):
     def __init__(self, first_name, last_name, employee_id, salary, license_number, qualifications):
@@ -14,4 +14,8 @@ class Driver(Employee):
 # Uruchomienie tego kodu: python -m src.zajecia04.personnel.driver
 if __name__ == "__main__":
     driver1 = Driver("Jane", "Smith", 1, 12000.00, "LIC1001", ["BLS"])
+    driver2 = Driver("Jane", "Smith", 1, 12000.00, "LIC1001", ["BLS"])
+    driver3 = Driver("Jane", "Smith", 1, 12000.00, "LIC1001", ["BLS"])
     print(driver1.display_info())
+    print(driver2.display_info())
+    print(driver3.display_info())
