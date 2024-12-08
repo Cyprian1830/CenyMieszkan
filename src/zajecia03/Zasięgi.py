@@ -1,4 +1,3 @@
-
 # zad 1
 def stworz_funkcje_potegujaca(wykladnik):
     def poteguj(podstawa):
@@ -7,11 +6,12 @@ def stworz_funkcje_potegujaca(wykladnik):
     return poteguj
 
 
-potega_2 = stworz_funkcje_potegujaca(2)   # Tworzy funkcję potęgującą do kwadratu
+potega_2 = stworz_funkcje_potegujaca(2)  # Tworzy funkcję potęgującą do kwadratu
 print(potega_2(4))  # Wynik: 16
 
 
 # licznik zad1
+
 
 def licznik():
     counter = 0
@@ -31,6 +31,8 @@ print(funkcja())
 print(funkcja())
 
 print("#############")
+
+
 def licznik_2():
     """
     Jest to funkcja, któa ma za zadanie używać zmiennej globalnej i zwiększać jej wartość
@@ -47,6 +49,8 @@ print(licznik_2())
 print(licznik_2())
 
 print("########")
+
+
 class licznik_klasa:
     def __init__(self):
         self.counter = 0

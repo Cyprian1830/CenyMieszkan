@@ -7,25 +7,25 @@ import json
 wartosc = 100
 dodawanie = wartosc + 123.15
 potega = dodawanie**123
-tekst = str(potega)
+text = str(potega)
 wartosc_pi = math.pi
 losowa = random.choice([1, 2, 3, 4, 5])
 
 # Łańcuchy znaków
 
-tekst = f"Wartosc: {tekst}"
-dlugosc = len(tekst)
-wycinek = tekst[1:4]
+text = f"Wartosc: {text}"
+dlugosc = len(text)
+wycinek = text[1:4]
 print(dlugosc)
 print(wycinek)
-print(dir(tekst))
-tekst = tekst.upper()
-print(tekst)
-# tekst[2] = "p"
+print(dir(text))
+text = text.upper()
+print(text)
+# text[2] = "p"
 # strings are not mutable
 
 # Listy
-lista = list(tekst[:8])
+lista = list(text[:8])
 lista.append([1, 2, 3, 4, 5])
 lista.remove(":")
 print(lista)
@@ -33,18 +33,22 @@ print(lista)
 # Listy składane (list comprehension)
 print("lista: ", lista)
 lista2 = [1, 2, 3, "banan", 100]
-print("lista2: ",lista2)
+print("lista2: ", lista2)
 lista3 = [x**2 for x in lista2 if x != "banan"]
 print("lista3: ", lista3)
 lista4 = [x for x in range(2, 17, 2)]
 print("lista4: ", lista4)
 
 # Słowniki
-ja = dict(imie="Cyprian", nazwisko="Szot", wiek=20,
-          rodzice=[{"imie": "Bogdan", "wiek": 62}, {"imie": "Ewa", "wiek": 58}])
-print(f"Rodzice to: {ja["rodzice"]}")
+ja = dict(
+    imie="Cyprian",
+    nazwisko="Szot",
+    wiek=20,
+    rodzice=[{"imie": "Bogdan", "wiek": 62}, {"imie": "Ewa", "wiek": 58}],
+)
+print(f"Rodzice to: {ja['rodzice']}")
 
-print(f"Imie rodzica to: {ja["rodzice"][0]["imie"]}")
+print(f"Imie rodzica to: {ja['rodzice'][0]['imie']}")
 print(f"Wszystkie klucze w słowniku to: {ja.keys()}")
 logika = "rodzenstwo" in ja
 print(f"Czy nasz słownik posiada klucz rodzeństwo?: {logika}")
@@ -65,7 +69,17 @@ print(f"Czesc wspolna: {X.intersection(Y)}")
 
 # Instrukcje
 # 1
-imiona = ["Cyprian", "Kamil", "Amelia", "Agata", "Emilka", "Asia", "Iwo", "Tytus", "Kasia"]
+imiona = [
+    "Cyprian",
+    "Kamil",
+    "Amelia",
+    "Agata",
+    "Emilka",
+    "Asia",
+    "Iwo",
+    "Tytus",
+    "Kasia",
+]
 for indeks, imie in enumerate(imiona):
     print(f"Indeks: {indeks}, imię: {imie}")
 
@@ -100,7 +114,7 @@ print(czy_rowna_zero(1))
 
 
 def dostep_do_owocow(owoc):
-    lista = ['jabłko', 'banan', 'pomarańcza']
+    lista = ["jabłko", "banan", "pomarańcza"]
     wynik = owoc in lista
     if wynik:
         print("Owoc jest dostępny!")
@@ -134,15 +148,15 @@ print(f"Wartość zmiennej M po zmianie L: {M}")
 
 L = [4, 5, 6]
 
-X = L * 4
+X1 = L * 4
 
-Y = [L] * 4
+Y1 = [L] * 4
 
-print(f"X: {X}, Y: {Y}")
+print(f"X: {X1}, Y: {Y1}")
 
 L[1] = "wow"
 
-print(f"X: {X}, Y: {Y}")
+print(f"X: {X1}, Y: {Y1}")
 
 L = [4, 5, 6]
 
@@ -150,18 +164,18 @@ Y = [list(L)] * 4
 
 L[1] = "wow"
 
-print(f"Y: {Y}")
+print(f"Y: {Y1}")
 
-Y[0][1] = "wow"
+Y1 = "wow"
 
-print(f"Y: {Y}")
+print(f"Y: {Y1}")
 
 print("#######################################################")
 # Zadania sprawdzające
 # zad 1
 
 
-with open('teksty.json', 'r') as file:
+with open("teksty.json") as file:
     dane = json.load(file)
 
 print(dane)
@@ -181,7 +195,7 @@ wyrazy = male.split()
 print(wyrazy)
 
 print("Bez znaków interpunkcyjnych:")
-bez_znakow = [wyraz.replace('.', "").replace(',', "") for wyraz in wyrazy]
+bez_znakow = [wyraz.replace(".", "").replace(",", "") for wyraz in wyrazy]
 print(bez_znakow)
 
 duze_na_koncu = [wyraz[:-1] + wyraz[-1].upper() for wyraz in bez_znakow]
@@ -189,7 +203,7 @@ print("Duze na końcu:")
 print(duze_na_koncu)
 
 print("Wyrazy gdzie występuje a lub A: ")
-lista = [wyraz for wyraz in duze_na_koncu if 'a' in wyraz.lower()]
+lista = [wyraz for wyraz in duze_na_koncu if "a" in wyraz.lower()]
 print(lista)
 
 print("Unikatowe wartości: ")
@@ -204,7 +218,7 @@ print("Slownik: ")
 print(slownik)
 
 
-wyniki ={
+wyniki = {
     "Scalone ": teksty2,
     "Zmiana duzych na liter na male \n": male,
     "Podzielenie na wyrazy \n": wyrazy,
@@ -212,7 +226,7 @@ wyniki ={
     "Duze na końcu \n": duze_na_koncu,
     "Wyrazy z a lub A \n": lista,
     "Unikatowe wartosci \n": list(zestaw),
-    "Ilosc wystapien \n": slownik
+    "Ilosc wystapien \n": slownik,
 }
 
 

@@ -4,11 +4,16 @@ from src.zajecia04.personnel.employee import Employee
 
 
 class Station:
+    __slots__ = ["id", "location", "ambulance", "driver", "additional_employee"]
 
-    __slots__ = ['id', 'location', 'ambulance', 'driver', 'additional_employee']
-
-    def __init__(self, id: int, location: str, ambulance: Ambulance,
-                 driver: Driver, additional_employee: Employee):
+    def __init__(
+        self,
+        id: int,
+        location: str,
+        ambulance: Ambulance,
+        driver: Driver,
+        additional_employee: Employee,
+    ):
         self.location = location
         self.id = id
         self.ambulance = ambulance
@@ -22,7 +27,15 @@ class Station:
             print("Ambulance on the wrong place!")
 
 
-stacja = Station(1, "Krakow",
-                 Ambulance('car', 'ready', 'Krakow', '10/10'),
-                 Driver("Cyprian", "Szot", 1, 8000, 123, "very good"),
-                 Employee("Kazimierz", "Szwedow", 123, 5600, ))
+stacja = Station(
+    1,
+    "Krakow",
+    Ambulance("car", "ready", "Krakow", "10/10"),
+    Driver("Cyprian", "Szot", 1, 8000, 123, "very good"),
+    Employee(
+        "Kazimierz",
+        "Szwedow",
+        123,
+        5600,
+    ),
+)

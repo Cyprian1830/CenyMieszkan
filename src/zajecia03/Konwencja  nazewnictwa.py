@@ -11,7 +11,9 @@ def public_function():
 
 class ExampleClass:
     def __init__(self, value):
-        self.value = value  # Funkcja __init__ jest wywoływana przy tworzeniu obiektu tej klasy
+        self.value = (
+            value  # Funkcja __init__ jest wywoływana przy tworzeniu obiektu tej klasy
+        )
 
     def __str__(self):
         return f"ExampleClass with value: {self.value}"  # __str__ definiuje, jak obiekt będzie reprezentowany w formie tekstu

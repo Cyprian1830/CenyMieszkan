@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moje-pakiety"
+version = "0.0.1"
+requires-python = '>=3.8.0'
+description = "Poszczegolne pakiety odpowiadajace przeprowadzonym zajeciom"
+authors = [
+    { name = "Cyprian Szot", email = "cyprianszot@student.agh.edu.pl" }
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.mypy]
+explicit_package_bases = true
+
+[project.scripts]
+mycli = "src/zajecia08/cli_entrypoint:cli"

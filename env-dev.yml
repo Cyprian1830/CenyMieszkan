@@ -1,0 +1,14 @@
+channels:
+  - conda-forge
+dependencies:
+  - pip:
+    - pre-commit
+    - pytest
+    - pytest-asyncio
+    - pytest-cov
+    - pytest-mock
+    - pytest-pretty
+    - ruff
+    - mkdocs
+    - mkdocs-material
+    - mypy

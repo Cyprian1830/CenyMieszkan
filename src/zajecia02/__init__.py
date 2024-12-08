@@ -1,1 +1,1 @@
-__all__ = ["pętle", "przypisywania"]
+__all__ = []

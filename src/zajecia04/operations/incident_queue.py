@@ -1,6 +1,4 @@
 from src.zajecia04.operations.incident import Incident
-from datetime import time
-from src.zajecia04.fleet.ambulance import Ambulance
 
 
 class IncidentQueue:
@@ -37,14 +35,17 @@ class IncidentQueue:
 
     def __str__(self):
         if len(self):
-            return "\n".join([f"{' ' * (4 * idx)}{incident}" for idx, incident in enumerate(self.__queue)])
+            return "\n".join([
+                f"{' ' * (4 * idx)}{incident}"
+                for idx, incident in enumerate(self.__queue)
+            ])
         else:
             return "Empty queue"
 
     def __add__(self, other):
         if isinstance(other, Incident):
             new__queue = IncidentQueue()
-            new__queue.__queue = self.__queue[:] 
+            new__queue.__queue = self.__queue[:]
             new__queue += other
             return new__queue
         else:
@@ -83,43 +84,44 @@ class IncidentQueue:
     def __len__(self):
         return len(self.__queue)
 
+
 if __name__ == "__main__":
     queue = IncidentQueue()
-#    incident1 = Incident("Power outage in sector 4", 1, time(20, 8, 12), dict(imie="Cyprian", naziwsko="Szot"))
- #   incident2 = Incident("Fire alarm in building 21", 3, time(14, 9, 18), dict(imie="Troy", nazwisko="Sivan"))
-  #  incident4 = Incident("Fire alarm in building 129", 2, time(18, 10, 1), dict(imie="Kamil", nazwisko="Bednarek"))
+    #    incident1 = Incident("Power outage in sector 4", 1, time(20, 8, 12), dict(imie="Cyprian", naziwsko="Szot"))
+    #   incident2 = Incident("Fire alarm in building 21", 3, time(14, 9, 18), dict(imie="Troy", nazwisko="Sivan"))
+    #  incident4 = Incident("Fire alarm in building 129", 2, time(18, 10, 1), dict(imie="Kamil", nazwisko="Bednarek"))
 
-    print(f"---------- wyświetlanie za pomocą __str__ ----------")
-  #  print(queue)
+    print("---------- wyświetlanie za pomocą __str__ ----------")
+    #  print(queue)
 
-    print(f"---------- dodanie za pomocą __iadd__ ----------")
-  #  queue += incident1
-    #queue += incident2
-   # print(queue)
-    print(f"---------- dodanie za pomocą __add__ ----------")
- #   queue = queue + incident4
-    #print(queue)
+    print("---------- dodanie za pomocą __iadd__ ----------")
+    #  queue += incident1
+    # queue += incident2
+    # print(queue)
+    print("---------- dodanie za pomocą __add__ ----------")
+    #   queue = queue + incident4
+    # print(queue)
 
-    print(f"---------- dostęp za pomocą __getitem__ ----------")
-#    print(queue[0])
-    print(f"---------- sprawdzenie za pomocą __contains__ ----------")
-   # print(incident1 in queue)
+    print("---------- dostęp za pomocą __getitem__ ----------")
+    #    print(queue[0])
+    print("---------- sprawdzenie za pomocą __contains__ ----------")
+    # print(incident1 in queue)
 
-    print(f"---------- iteracja za pomocą __iter__ i __next__ ----------")
-   # for incident in queue:
-  #      print(incident)
+    print("---------- iteracja za pomocą __iter__ i __next__ ----------")
+    # for incident in queue:
+    #      print(incident)
 
-    print(f"---------- dodawanie prawostronne za pomocą __radd__ ----------")
-#    new_incident = Incident("Test incident", 1, time(20, 50, 19),
-#                             dict(imie="Zofia", nazwisko="Mrowiec"), Ambulance("car", "invalid", "Gdansk", "none"))
-  # queue = new_incident + queue
+    print("---------- dodawanie prawostronne za pomocą __radd__ ----------")
+    #    new_incident = Incident("Test incident", 1, time(20, 50, 19),
+    #                             dict(imie="Zofia", nazwisko="Mrowiec"), Ambulance("car", "invalid", "Gdansk", "none"))
+    # queue = new_incident + queue
 
-    print(f"---------- test za pomocą __bool__ ----------")
- #   if queue:
+    print("---------- test za pomocą __bool__ ----------")
+    #   if queue:
     print("Queue is not empty.")
 
-    print(f"---------- długość kolejki za pomocą __len__ ----------")
-  #  print(len(queue))
+    print("---------- długość kolejki za pomocą __len__ ----------")
+    #  print(len(queue))
 
-    print(f"---------- wyszukiwanie za pomocą __call__ ----------")
-    #print(queue(1))
+    print("---------- wyszukiwanie za pomocą __call__ ----------")
+    # print(queue(1))

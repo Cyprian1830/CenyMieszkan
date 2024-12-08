@@ -2,7 +2,7 @@ import time
 
 
 def dekorator1(unit):
-    if unit not in ["mikroseconds", "seconds"]:
+    if unit not in ["microseconds", "seconds"]:
         return
 
     def dekorator(funkcja):
@@ -13,12 +13,13 @@ def dekorator1(unit):
             czas2 = time.time()
             res = czas2 - czas1
             print("Czas na końcu: ", czas2)
-            if unit == "mikroseconds":
+            if unit == "microseconds":
                 res *= 1000000
             print("Czas wykonania funkcji to: ", res)
             return res
 
         return wrapper
+
     return dekorator
 
 
