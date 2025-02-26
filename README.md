@@ -20,6 +20,3 @@ flats price-analysis Warszawa 30 80 -  To sprawdzi zależność ceny od metrażu
 flats predict-price Warszawa 30 80 2 5 2030 - To przewidzi średnią cenę mieszkań w Warszawie 
 
 flats run-forecast Gdańsk 35 90 3 1 - wykona prognoze cen np. w Gdańsku do 2050 r.
-
-Aby przetestować kod :
-make test
