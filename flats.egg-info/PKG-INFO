@@ -1,0 +1,5 @@
+Metadata-Version: 2.2
+Name: flats
+Version: 0.0.1
+Author-email: Cyprian Szot <cyprianszot@student.agh.edu.pl>
+Requires-Python: >=3.12.0
