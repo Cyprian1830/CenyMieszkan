@@ -7,7 +7,7 @@ CenaMieszkan to projekt do analizy rynku nieruchomości, który umożliwia:
 ✅ Prognozowanie cen mieszkań w przyszłości  
 
 Na wstępie należy stworzyć środowisko:
--make env
+make env
 
 Do wywołania odpowiednich funkcji można się podsłużyć przykładami:
 
